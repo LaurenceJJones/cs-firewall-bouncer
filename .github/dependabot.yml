@@ -1,0 +1,30 @@
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+    - package-ecosystem: "gomod"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+      allow:
+          - dependency-type: "all"
+      labels:
+          - "kind/chore"
+      open-pull-requests-limit: 5
+      ## We use groups to handle same origin together
+      groups:
+          golangorg-dependancies:
+              patterns:
+                  - "golang.org*"
+					crowdsecurity-dependancies:
+							patterns:
+									- "github.com/crowdsecurity/*"
+					prometheus-dependancies:
+							patterns:
+									- "github.com/prometheus/*"
+
+    ## Disable pip since only used for testing
+    - package-ecosystem: "pip"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+      open-pull-requests-limit: 0
