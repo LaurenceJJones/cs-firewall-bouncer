@@ -15,12 +15,12 @@ updates:
           golangorg-dependancies:
               patterns:
                   - "golang.org*"
-					crowdsecurity-dependancies:
-							patterns:
-									- "github.com/crowdsecurity/*"
-					prometheus-dependancies:
-							patterns:
-									- "github.com/prometheus/*"
+          crowdsecurity-dependancies:
+              patterns:
+                  - "github.com/crowdsecurity/*"
+          prometheus-dependancies:
+              patterns:
+                  - "github.com/prometheus/*"
 
     ## Disable pip since only used for testing
     - package-ecosystem: "pip"
